@@ -44,8 +44,8 @@ function calcola_induzione(){
     }
 	var induzione,peso,posologia,vel_regime;
 	induzione=Number($("#gruppo_induzione input[type='radio']:checked").val());
-	peso=Number($("#peso").val());
-	posologia=Number($("#gruppo_posologia input[type='radio']:checked").val());
+	peso=Number($("#peso_privigen").val());
+	posologia=Number($("#gruppo_posologia_privigen input[type='radio']:checked").val());
 	vel_regime=Number($("#gruppo_regime input[type='radio']:checked").val());	
 	var quantita_tot_g,quantita_tot_ml;
 	quantita_tot_g=peso*posologia;
@@ -68,7 +68,6 @@ function calcola_induzione(){
 		quantita_residua_ml=quantita_tot_ml;
 		tempo_induzione=0;
 	}
-	
 	ml_totali=Math.round(ml_totali*100)/100;
 	tempo_regime=quantita_residua_ml/(vel_regime*peso)*60;
 	tempo_regime=Math.round(tempo_regime);	

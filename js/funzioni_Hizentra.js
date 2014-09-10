@@ -7,9 +7,9 @@ function calcola(){
         $(".output_hizentra").fadeTo("slow",1.5);
     }	
 	var peso,posologia;
-	peso=Number($("#peso").val());
+	peso=Number($("#peso_hizentra").val());
 	//posologia=Number($("#posologia").val());
-	posologia=Number($("#gruppo_posologia input[type='radio']:checked").val());	
+	posologia=Number($("#gruppo_posologia_hizentra input[type='radio']:checked").val());	
 	var g_sett,ml_sett,n_infusioni,n_siti,velocita,min_infusione,min_sett,n_fiale;	
 	g_sett=Math.round((peso*posologia)/4);
 	ml_sett=g_sett/0.2;
