@@ -1,0 +1,96 @@
+#hizentra_header{
+	background-color:#790033;
+	color:white;
+	text-shadow: 0 0 0 #777;
+}
+#privigen_header{
+	background-color:#849324;
+	color:white;
+	text-shadow: 0 0 0 #777;
+}
+body,.ui-content{
+	margin:0;
+	padding:0;
+}
+.ui-page-theme-a .ui-bar-inherit{
+	background-color:white;
+}
+.dati{
+	background-color:#e8e7e8;
+	margin:1em 0 1em 0;
+	padding:1em;
+}
+.output_hizentra, .output_privigen{
+	border:2px solid #D0D0D0;
+	font-size:110%;
+	margin:1em;
+	padding:1em;
+	border-radius:1em;
+}
+.output_hizentra p, .output_privigen p{
+	margin:0;
+	line-height:normal;
+	font-weight:bold;
+}
+p{
+	margin:0;
+	line-height:normal;
+}
+table {
+	margin-top:15px;
+    border-collapse:collapse;
+	width:100%;
+	text-align:left;
+}
+td{
+	width:25%;
+	border-top:1px solid #D0D0D0;
+	margin:0;
+	padding:6px;
+	vertical-align:top;
+}
+th{
+	margin:0;
+	padding:6px;
+	vertical-align:top;
+}
+th.hizentra{
+	color:#790033;
+	background-color:#e7d1da;
+}
+td.hizentra{
+	border-top:1px solid #bd829b;
+	background-color:#e7d1da;
+}
+
+
+
+#tab_fasi{
+	border:0;
+	margin:0;
+	border:0;
+}
+#tab_fasi tr td {
+	border:0;
+}
+.n_fasi{
+	color:red;
+	/*font-weight:bold;*/
+}
+.spiegazioni_fasi{
+	font-style: italic;
+}
+.light{
+	font-size:90%;
+	font-weight:normal;
+}
+
+.footer{
+	background-color: #BEBEBE;
+	border-color: #777777;
+}
+.ui-page-theme-a .ui-btn.ui-btn-active, html .ui-bar-a .ui-btn.ui-btn-active, html .ui-body-a .ui-btn.ui-btn-active, html body .ui-group-theme-a .ui-btn.ui-btn-active, html head+body .ui-btn.ui-btn-a.ui-btn-active, .ui-page-theme-a .ui-checkbox-on:after, html .ui-bar-a .ui-checkbox-on:after, html .ui-body-a .ui-checkbox-on:after, html body .ui-group-theme-a .ui-checkbox-on:after, .ui-btn.ui-checkbox-on.ui-btn-a:after, .ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active, .ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active {
+background-color: #AAA;
+border-color: #DDD;
+text-shadow: 0 1px 0 #777;
+}
