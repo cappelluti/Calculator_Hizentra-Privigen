@@ -2,13 +2,13 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "Hizentra/Privigen calculator"
-    version     = "1.0.0"
-    versionCode = "10" >
+    version     = "3.5.0"
+    versionCode = "1" >
 
     <!-- versionCode is optional and Android only -->
 
-    <preference name="phonegap-version" value="3.3.0" />
-    <name>Hizentra/Privigen calculator</name>
+    <preference name="phonegap-version" value="3.5.0" />
+    <name>Hizentra/Privigen Calculator</name>
     <description>Programma di calcolo...</description>
 	<author href="http://www.edizioniseed.it" email="info@edizioniseed.it">SEEd</author>
 	
@@ -28,7 +28,8 @@
    <preference name="android-minSdkVersion"      value="7" />              <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
    <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
    
-   <gap:platform name="android" />
+   <gap:platform name="ios" />
+	<gap:platform name="android" />
    <!--
 		<gap:platform name="ios" />
 		<gap:platform name="winphone" />
