@@ -63,13 +63,13 @@ td.hizentra{
 	background-color:#e7d1da;
 }
 @media (max-width:500px) {
-	.output_hizentra{
+	/*.output_hizentra{
 		font-size:100%;
-		padding:0.7em 0 1em 0;
+		padding:0.7em 0 0 0;
 	}
 	.output_hizentra p{
 		margin-left:1em;
-	}
+	}*/
 }
 #tab_fasi{
 	border:0;

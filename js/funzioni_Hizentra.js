@@ -1,4 +1,7 @@
 $(document).on('pageinit','#hizentra' ,function () { 
+	if ($(window).width()<500){
+		$(".output_hizentra").css({"font-size":"80%","padding":"0.7em 0 0 0"});
+	}
     $(".output_hizentra").css({opacity:0});
 	$("#hizentra").change(function(){calcola();});
 });
@@ -188,7 +191,12 @@ function calcola(){
 	subc_min_infusione=(subc_ml_sett*1.5)/subc_n_infusioni;
 	subc_min_sett=subc_min_infusione*subc_n_infusioni;	
 	
-	txt="<p>Dosaggio e durata infusioni</p>";
+	stile_titolo="";
+	if ($(window).width()<500){
+		stile_titolo=" style=margin-left:1em";
+		}
+	
+	txt="<p"+stile_titolo+">Dosaggio e durata infusioni</p>";
 	txt=txt+"<table>";
 		txt=txt+"<tr>";
 			txt=txt+"<th> </th>";
@@ -199,56 +207,56 @@ function calcola(){
 		txt=txt+"<tr>";
 			txt=txt+"<td>g/sett</td>";
 			txt=txt+"<td class='hizentra'>"+g_sett+"</td>";
-			txt=txt+"<td class='octanorm'>"+Math.round(octa_g_sett)+"</td>";
-			txt=txt+"<td class='subcuvia'>"+Math.round(subc_g_sett)+"</td>";
+			txt=txt+"<td>"+Math.round(octa_g_sett)+"</td>";
+			txt=txt+"<td>"+Math.round(subc_g_sett)+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
 			txt=txt+"<td>ml/sett</td>";
 			txt=txt+"<td class='hizentra'>"+ml_sett+"</td>";
-			txt=txt+"<td class='octanorm'>"+octa_ml_sett+"</td>";
-			txt=txt+"<td class='subcuvia'>"+subc_ml_sett+"</td>";
+			txt=txt+"<td>"+octa_ml_sett+"</td>";
+			txt=txt+"<td>"+subc_ml_sett+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
-			txt=txt+"<td>N°&nbsp;infusioni/sett</td>";
+			txt=txt+"<td>N.&nbsp;infusioni/sett</td>";
 			txt=txt+"<td class='hizentra'>"+n_infusioni+"</td>";
-			txt=txt+"<td class='octanorm'>"+octa_n_infusioni+"</td>";
-			txt=txt+"<td class='subcuvia'>"+subc_n_infusioni+"</td>";
+			txt=txt+"<td>"+octa_n_infusioni+"</td>";
+			txt=txt+"<td>"+subc_n_infusioni+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
-			txt=txt+"<td>N°&nbsp;siti/infusione</td>";
+			txt=txt+"<td>N.&nbsp;siti/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+n_siti+"</td>";
-			txt=txt+"<td class='octanorm'>"+octa_n_siti+"</td>";
-			txt=txt+"<td class='subcuvia'>"+subc_n_siti+"</td>";
+			txt=txt+"<td>"+octa_n_siti+"</td>";
+			txt=txt+"<td>"+subc_n_siti+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
 			txt=txt+"<td>Velocit&agrave;</td>";
 			txt=txt+"<td class='hizentra'>"+velocita+"</td>";
-			txt=txt+"<td class='octanorm'>"+octa_velocita+"</td>";
-			txt=txt+"<td class='subcuvia'>"+subc_velocita+"</td>";
+			txt=txt+"<td>"+octa_velocita+"</td>";
+			txt=txt+"<td>"+subc_velocita+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
 			txt=txt+"<td>Min/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+Math.round(min_infusione)+"</td>";
-			txt=txt+"<td class='octanorm'>"+Math.round(octa_min_infusione)+"</td>";
-			txt=txt+"<td class='subcuvia'>"+Math.round(subc_min_infusione)+"</td>";
+			txt=txt+"<td>"+Math.round(octa_min_infusione)+"</td>";
+			txt=txt+"<td>"+Math.round(subc_min_infusione)+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
 			txt=txt+"<td>Min/sett</td>";
 			txt=txt+"<td class='hizentra'>"+min_sett+"</td>";
-			txt=txt+"<td class='octanorm'>"+octa_min_sett+"</td>";
-			txt=txt+"<td class='subcuvia'>"+subc_min_sett+"</td>";
+			txt=txt+"<td>"+octa_min_sett+"</td>";
+			txt=txt+"<td>"+subc_min_sett+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
-			txt=txt+"<td>N°&nbsp;fiale/infusione</td>";
+			txt=txt+"<td>N.&nbsp;fiale/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+n_fiale+"</td>";
-			txt=txt+"<td class='octanorm'></td>";
-			txt=txt+"<td class='subcuvia'></td>";
+			txt=txt+"<td></td>";
+			txt=txt+"<td></td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
-			txt=txt+"<td>N°&nbsp;fiale/mese</td>";
+			txt=txt+"<td>N.&nbsp;fiale/mese</td>";
 			txt=txt+"<td class='hizentra'>"+n_fiale_mese+"</td>";
-			txt=txt+"<td class='octanorm'></td>";
-			txt=txt+"<td class='subcuvia'></td>";
+			txt=txt+"<td></td>";
+			txt=txt+"<td></td>";
 		txt=txt+"<tr>";	
 	txt=txt+"</table>";	
 	
