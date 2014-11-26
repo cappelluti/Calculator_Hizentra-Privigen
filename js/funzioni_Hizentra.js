@@ -1,6 +1,6 @@
 $(document).on('pageinit','#hizentra' ,function () { 
 	if ($(window).width()<500){
-		$(".output_hizentra").css({"font-size":"80%","padding":"0.7em 0 0 0"});
+		$(".output_hizentra").css({"font-size":"72%","padding":"0.7em 0 0 0"});
 	}
     $(".output_hizentra").css({opacity:0});
 	$("#hizentra").change(function(){calcola();});
