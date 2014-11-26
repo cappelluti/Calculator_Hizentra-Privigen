@@ -62,9 +62,15 @@ td.hizentra{
 	border-top:1px solid #bd829b;
 	background-color:#e7d1da;
 }
-
-
-
+@media (max-width:500px) {
+	.output_hizentra{
+		font-size:100%;
+		padding:0.7em 0 1em 0;
+	}
+	.output_hizentra p{
+		margin-left:1em;
+	}
+}
 #tab_fasi{
 	border:0;
 	margin:0;
@@ -84,7 +90,6 @@ td.hizentra{
 	font-size:90%;
 	font-weight:normal;
 }
-
 .footer{
 	background-color: #BEBEBE;
 	border-color: #777777;
@@ -93,4 +98,10 @@ td.hizentra{
 background-color: #AAA;
 border-color: #DDD;
 text-shadow: 0 1px 0 #777;
+}
+.ui-btn{
+	padding: 0.7em;
+}
+.ui-link {
+	padding: 0.1em;
 }

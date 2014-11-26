@@ -93,5 +93,5 @@ function converti_tempo(tempo){
 	tempo_ore=Math.floor(tempo/60);
 	tempo_min_residui=((tempo/60)-tempo_ore)*60;
 	tempo_min_residui=Math.round(tempo_min_residui);	
-    return tempo_ore+" h – "+tempo_min_residui+" min";
+    return tempo_ore+"&nbsp;h&nbsp;–&nbsp;"+tempo_min_residui+"&nbsp;min";
 }

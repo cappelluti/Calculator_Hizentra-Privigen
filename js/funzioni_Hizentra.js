@@ -10,7 +10,7 @@ function calcola(){
 	peso=Number($("#peso_hizentra").val());
 	//posologia=Number($("#posologia").val());
 	posologia=Number($("#gruppo_posologia_hizentra input[type='radio']:checked").val());	
-	var g_sett,ml_sett,n_infusioni,n_siti,velocita,min_infusione,min_sett,n_fiale;	
+	var g_sett,ml_sett,n_infusioni,n_siti,velocita,min_infusione,min_sett,n_fiale,n_fiale_mese;	
 	g_sett=Math.round((peso*posologia)/4);
 	ml_sett=g_sett/0.2;
 	n_infusioni=Math.ceil(ml_sett/50);
@@ -149,7 +149,16 @@ function calcola(){
 		else if (peso<=118){n_fiale="2 da 4g +</br>1 da 1g";}
 		else if (peso<=120){n_fiale="1 da 10g";}
 	}
-		
+	n_fiale_mese="";
+	var n_fiale_splittato = n_fiale.split("</br>");
+	b="";
+	for (i=0;i<n_fiale_splittato.length;i++){
+			n=Number(n_fiale_splittato[i].slice(0,1));
+			n=n*n_infusioni*4;			
+			n_fiale_splittato[i]=n+n_fiale_splittato[i].slice(1,n_fiale_splittato[i].length);			
+			n_fiale_mese=n_fiale_mese+n_fiale_splittato[i]+"</br>";
+	}
+	
 	//Octanorm
 	var octa_g_sett,octa_ml_sett,octa_n_infusioni,octa_n_siti,octa_velocita,octa_min_infusione,octa_min_sett,octa_n_fiale;
 	octa_g_sett=1.65*Math.round(((peso*posologia)/4)/1.65);	
@@ -179,7 +188,7 @@ function calcola(){
 	subc_min_infusione=(subc_ml_sett*1.5)/subc_n_infusioni;
 	subc_min_sett=subc_min_infusione*subc_n_infusioni;	
 	
-	txt="<p>Dosaggio settimanale e durata</p>";
+	txt="<p>Dosaggio e durata infusioni</p>";
 	txt=txt+"<table>";
 		txt=txt+"<tr>";
 			txt=txt+"<th> </th>";
@@ -190,50 +199,56 @@ function calcola(){
 		txt=txt+"<tr>";
 			txt=txt+"<td>g/sett</td>";
 			txt=txt+"<td class='hizentra'>"+g_sett+"</td>";
-			txt=txt+"<td>"+Math.round(octa_g_sett)+"</td>";
-			txt=txt+"<td>"+Math.round(subc_g_sett)+"</td>";
+			txt=txt+"<td class='octanorm'>"+Math.round(octa_g_sett)+"</td>";
+			txt=txt+"<td class='subcuvia'>"+Math.round(subc_g_sett)+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
 			txt=txt+"<td>ml/sett</td>";
 			txt=txt+"<td class='hizentra'>"+ml_sett+"</td>";
-			txt=txt+"<td>"+octa_ml_sett+"</td>";
-			txt=txt+"<td>"+subc_ml_sett+"</td>";
+			txt=txt+"<td class='octanorm'>"+octa_ml_sett+"</td>";
+			txt=txt+"<td class='subcuvia'>"+subc_ml_sett+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
-			txt=txt+"<td>N° infusioni/sett</td>";
+			txt=txt+"<td>N°&nbsp;infusioni/sett</td>";
 			txt=txt+"<td class='hizentra'>"+n_infusioni+"</td>";
-			txt=txt+"<td>"+octa_n_infusioni+"</td>";
-			txt=txt+"<td>"+subc_n_infusioni+"</td>";
+			txt=txt+"<td class='octanorm'>"+octa_n_infusioni+"</td>";
+			txt=txt+"<td class='subcuvia'>"+subc_n_infusioni+"</td>";
 		txt=txt+"<tr>";
 		txt=txt+"<tr>";
-			txt=txt+"<td>N° siti/infusione</td>";
+			txt=txt+"<td>N°&nbsp;siti/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+n_siti+"</td>";
-			txt=txt+"<td>"+octa_n_siti+"</td>";
-			txt=txt+"<td>"+subc_n_siti+"</td>";
+			txt=txt+"<td class='octanorm'>"+octa_n_siti+"</td>";
+			txt=txt+"<td class='subcuvia'>"+subc_n_siti+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
 			txt=txt+"<td>Velocit&agrave;</td>";
 			txt=txt+"<td class='hizentra'>"+velocita+"</td>";
-			txt=txt+"<td>"+octa_velocita+"</td>";
-			txt=txt+"<td>"+subc_velocita+"</td>";
+			txt=txt+"<td class='octanorm'>"+octa_velocita+"</td>";
+			txt=txt+"<td class='subcuvia'>"+subc_velocita+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
-			txt=txt+"<td>Minuti/infusione</td>";
+			txt=txt+"<td>Min/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+Math.round(min_infusione)+"</td>";
-			txt=txt+"<td>"+Math.round(octa_min_infusione)+"</td>";
-			txt=txt+"<td>"+Math.round(subc_min_infusione)+"</td>";
+			txt=txt+"<td class='octanorm'>"+Math.round(octa_min_infusione)+"</td>";
+			txt=txt+"<td class='subcuvia'>"+Math.round(subc_min_infusione)+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
-			txt=txt+"<td>Minuti/sett</td>";
+			txt=txt+"<td>Min/sett</td>";
 			txt=txt+"<td class='hizentra'>"+min_sett+"</td>";
-			txt=txt+"<td>"+octa_min_sett+"</td>";
-			txt=txt+"<td>"+subc_min_sett+"</td>";
+			txt=txt+"<td class='octanorm'>"+octa_min_sett+"</td>";
+			txt=txt+"<td class='subcuvia'>"+subc_min_sett+"</td>";
 		txt=txt+"<tr>";	
 		txt=txt+"<tr>";
-			txt=txt+"<td>N° fiale/infusione</td>";
+			txt=txt+"<td>N°&nbsp;fiale/infusione</td>";
 			txt=txt+"<td class='hizentra'>"+n_fiale+"</td>";
-			txt=txt+"<td></td>";
-			txt=txt+"<td></td>";
+			txt=txt+"<td class='octanorm'></td>";
+			txt=txt+"<td class='subcuvia'></td>";
+		txt=txt+"<tr>";	
+		txt=txt+"<tr>";
+			txt=txt+"<td>N°&nbsp;fiale/mese</td>";
+			txt=txt+"<td class='hizentra'>"+n_fiale_mese+"</td>";
+			txt=txt+"<td class='octanorm'></td>";
+			txt=txt+"<td class='subcuvia'></td>";
 		txt=txt+"<tr>";	
 	txt=txt+"</table>";	
 	
