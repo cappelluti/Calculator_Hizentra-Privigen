@@ -194,7 +194,7 @@ function calcola(){
 	stile_titolo="";
 	if ($(window).width()<500){
 		stile_titolo=" style=margin-left:1em";
-		}
+	}
 	
 	txt="<p"+stile_titolo+">Dosaggio e durata infusioni</p>";
 	txt=txt+"<table>";

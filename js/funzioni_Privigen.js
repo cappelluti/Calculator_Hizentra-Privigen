@@ -78,8 +78,12 @@ function calcola_induzione(){
 	if (induzione==1){
 		txt=txt+"<span class='light'>Durata induzione: "+String(tempo_induzione).replace(".",",")+ " min<br/>";
 		txt=txt+"Durata regime: "+String(tempo_regime).replace(".",",")+ " min</span><br/>";
-	}	
-	txt=txt+"Durata totale: "+String(tempo_totale).replace(".",",")+ " min <span class='light'>("+converti_tempo(tempo_totale)+")</span>";	
+	}
+	a_capo="";
+	if ($(window).width()<500){
+		a_capo="<br>";
+	}
+	txt=txt+"Durata totale: "+String(tempo_totale).replace(".",",")+ " min "+a_capo+"<span class='light'>("+converti_tempo(tempo_totale)+")</span>";	
 	txt=txt.replace(".",",");
     output_privigen("<p>"+txt+"</p>");  
 }
